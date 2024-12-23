@@ -7,7 +7,8 @@
 <table>
     <thead>
         <tr>
-            <th>Acteurs</th>
+            <th>Prenom</th>
+            <th>Nom de famille</th>
         </tr>
     </thead>
     <tbody>

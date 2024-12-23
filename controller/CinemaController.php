@@ -24,5 +24,15 @@ class CinemaController {
 
         require "view/listActeurs.php";
     }
+
+    public function filmDetails($id) {
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->query("
+        SELECT *
+        FROM film f
+        where f.id_film =".$id);
+
+        require "view/filmDetails.php";
+    }
 }
 
