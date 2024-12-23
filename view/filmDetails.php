@@ -25,7 +25,28 @@
         <?php } ?>
     </tbody>
 </table>
-
+<h2>Casting</h2>
+<table>
+    <thead>
+        <tr>   
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>genre</th>
+            <th>Anniversaire</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+        foreach($casting->fetchAll() as $actor) { ?>
+        <tr>
+        <td><?= $actor["person_name"]?></td>
+            <td><?= $actor["person_lastName"]?></td>
+            <td><?= $actor["person_gender"]?></td>
+            <td><?= $actor["person_birthdate"]?></td>
+        </tr>
+        <?php } ?>
+    </tbody>
+</table>
 
 
 <?php

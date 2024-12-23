@@ -1,9 +1,5 @@
-<?php ob_start(); 
-
+<?php ob_start();
 ?>
-
-<p class="uk-label uk-label-warning"></p>
-
 <table>
     <thead>
         <tr>
@@ -23,6 +19,30 @@
             <td><?= $actor["person_birthdate"]?></td>
         </tr>
         <?php } ?>
+    </tbody>
+</table>
+
+<h2>Liste des films</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Durée en Minute</th>
+            <th>Rating</th>
+            <th>Année de sortie</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach($actorFilmsDetails->fetchAll() as $filmDetails) { ?>
+            <tr>
+                <td><?= $filmDetails["film_title"]?></td>
+                <td><?= $filmDetails["film_duration"]." min"?></td>
+                <td><?= $filmDetails["film_rating"]?></td>
+                <td><?= $filmDetails["film_date"]?></td>
+            </tr>
+            <?php } ?>
     </tbody>
 </table>
 
