@@ -2,13 +2,15 @@
 
 ?>
 
-<p class="uk-label uk-label-warning">Il y a <?= $requete->rowCount()?> acteur.</p>
+<p class="uk-label uk-label-warning"></p>
 
 <table>
     <thead>
         <tr>
             <th>Prenom</th>
-            <th>Nom de famille</th>
+            <th>Nom</th>
+            <th>genre</th>
+            <th>Anniversaire</th>
         </tr>
     </thead>
     <tbody>
@@ -17,7 +19,8 @@
         <tr>
             <td><?= $actor["person_name"]?></td>
             <td><?= $actor["person_lastName"]?></td>
-            <td><a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"> Voir plus.</a></td>
+            <td><?= $actor["person_gender"]?></td>
+            <td><?= $actor["person_birthdate"]?></td>
         </tr>
         <?php } ?>
     </tbody>

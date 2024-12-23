@@ -23,4 +23,15 @@ public function listActeurs() {
 
         require "view/listActeurs.php";
     }
+    
+    public function actorDetails($id) {
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->query("
+        SELECT *
+        FROM actor a
+        INNER JOIN person p ON p.id_person = a.id_person
+        where a.id_actor =".$id);
+
+        require "view/actorDetails.php";
+    }
 }
