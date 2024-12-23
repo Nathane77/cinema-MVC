@@ -13,6 +13,7 @@
                 <a href="index.php?action=listFilms">Films</a>
                 <a href="index.php?action=listActeurs">Actors</a>
                 <a href="index.php?action=listDirectors">Director</a>
+                <a href="index.php?action=listCategories">Category</a>
             </div>
             <input class="navSearchBar" type="text" placeholder="Search..">
         </nav>

@@ -17,11 +17,12 @@ public function listActeurs() {
     public function listDirectors() {
         $pdo = Connect::seConnecter();
         $requete = $pdo->query("
-        SELECT *
-        FROM person p
-        INNER JOIN director d ON d.id_person = p.id_person");
+        SELECT p.person_name, p.person_lastName, p.person_gender, p.person_birthdate, d.id_director
+        FROM director d
+        INNER JOIN person p ON p.id_person = d.id_person
+        ");
 
-        require "view/listActeurs.php";
+        require "view/listDirectors.php";
     }
     
     public function actorDetails($id) {

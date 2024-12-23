@@ -3,44 +3,33 @@
 <table>
     <thead>
         <tr>
-            <th>Prenom</th>
-            <th>Nom</th>
-            <th>genre</th>
-            <th>Anniversaire</th>
+            
         </tr>
     </thead>
     <tbody>
         <?php 
         foreach($requete->fetchAll() as $actor) { ?>
         <tr>
-            <td><?= $actor["person_name"]?></td>
-            <td><?= $actor["person_lastName"]?></td>
-            <td><?= $actor["person_gender"]?></td>
-            <td><?= $actor["person_birthdate"]?></td>
+    
         </tr>
         <?php } ?>
     </tbody>
 </table>
 
-<h2>Liste des films</h2>
+<h2></h2>
 
 <table>
     <thead>
         <tr>
-            <th>Titre</th>
-            <th>Durée en Minute</th>
-            <th>Rating</th>
-            <th>Année de sortie</th>
+     
         </tr>
     </thead>
     <tbody>
         <?php
-        foreach($actorFilmsDetails->fetchAll() as $filmDetails) { ?>
+        foreach($genreDetails->fetchAll() as $genreDetail) { ?>
             <tr>
-                <td><?= $filmDetails["film_title"]?></td>
-                <td><?= $filmDetails["film_duration"]." min"?></td>
-                <td><?= $filmDetails["film_rating"]?></td>
-                <td><?= $filmDetails["film_date"]?></td>
+                <td><?= $genreDetail["id_genre"]?></td>
+                <td><?= $genreDetail["genre_name"]." min"?></td>
             </tr>
             <?php } ?>
     </tbody>

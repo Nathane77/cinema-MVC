@@ -9,17 +9,14 @@
         <tr>
             <th>TITRE</th>
             <th>ANNE SORTIE</th>
-            <th>DETAILS</th>
         </tr>
     </thead>
     <tbody>
         <?php 
         foreach($requete->fetchAll() as $film) { ?>
         <tr>
-            <td><?= $film["film_title"]?> </td>
-            <td><?= $film["film_date"]?></td>
-            <td><a href="index.php?action=filmDetails&id=<?= $film["id_film"]?>"> Voir plus.</a></td>
-            
+            <td><a href="index.php?action=filmDetails&id=<?= $film["id_film"]?>"><?= $film["film_title"]?></a></td>
+            <td><?= $film["film_date"]?></td>            
         </tr>
         <?php } ?>
     </tbody>

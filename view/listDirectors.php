@@ -7,15 +7,17 @@
 <table>
     <thead>
         <tr>
-            <th>Acteurs</th>
+            <th>Nom</th>
+            <th>Nom de famille</th>
         </tr>
     </thead>
     <tbody>
         <?php 
-        foreach($requete->fetchAll() as $actor) { ?>
+        foreach($requete->fetchAll() as $director) { ?>
         <tr>
-            <td><?= $actor["person_name"]?></td>
-            <td><?= $actor["person_lastName"]?></td>
+            <td><a href="index.php?action=directorDetails&id=<?= $director["id_director"]?>"><?= $director["person_name"]?></a></td>
+            
+            <td><?= $director["person_lastName"]?></td>
         </tr>
         <?php } ?>
     </tbody>
