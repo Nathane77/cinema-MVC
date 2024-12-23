@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+@font-face {
+    font-family: "superbasic";
+    src: url(./content/Super_Basic.ttf)
+}
+
+body{
+    background-image: linear-gradient(to left top, #742183, #691f7e, #5e1e79, #541c74, #491a6e, #491768, #491463, #48115d, #4f0d56, #540b4e, #580b47, #5a0c41);
+    font-family: inter;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    height: 75px;
+    background-color: #2D2A3C;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2em;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+
+}
+
+.mainBanner{
+    margin: 2em 0;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    background-color: #b9b9b9;
+    justify-content: center;
+ 
+}
+
+.mainBannerImg{
+    width: 100%;
+}
+
+h1, h2{
+    font-family: superbasic;
+    color: white;
+    letter-spacing: 5px;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: #2D2A3C;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+
+.navLinks{
+    display: flex;
+    color: white;
+    
+    a{
+        margin: 0.5em;
+    }
+}
+
+.navSearchBar[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 17px;
+    
+}
+
+
+
+.navSearchBar[type=text] {
+    border: 1px solid #b9b9b9;
+}
+
+.navSearchBar{
+    display: flex;
+    justify-content: right;
+    margin-right: 2em;
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    caret-color: white;
+}
+
+::placeholder{
+    color: #b9b9b9;
+}
