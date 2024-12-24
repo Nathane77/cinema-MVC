@@ -81,7 +81,7 @@ footer{
     }
 }
 
-.navSearchBar[type=text] {
+.navSearchBar[type=text], .categoryInput[type=text]{
     float: right;
     padding: 6px;
     margin-top: 8px;
@@ -91,11 +91,11 @@ footer{
     
 }
 
-.navSearchBar[type=text] {
+.navSearchBar[type=text], .categoryInput[type=text]{
     border: 1px solid #b9b9b9;
 }
 
-.navSearchBar{
+.navSearchBar, .categoryInput{
     display: flex;
     justify-content: right;
     margin-right: 2em;
@@ -131,13 +131,16 @@ table{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 1300px;
+    margin: 1.5em;
+
 }
 
 .card{
     background-color: grey;
     width: 200px;
     height: 275px;
-    margin: 1em;
+    margin: 1.5em;
     text-align: center;
     align-content: center;
     border-radius: 10px;
@@ -147,4 +150,38 @@ table{
 .card:hover{
     cursor: pointer;
     scale: 1.2;
+}
+
+.formContainer{
+    display: flex;
+    background-color: grey;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 30%;
+    height: 250px;
+    margin-bottom: 3em;
+    flex-direction: column;
+}
+
+.formAddType{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    input, label{
+        margin: 10px;
+    }
+}
+
+.submitAddType{
+    background-color: #2D2A3C;
+    color: #b9b9b9;
+    border-radius: 7px;
+    border: none;
+    transition: rotate 1s;
+}
+
+.submitAddType:focus{
+    rotate: 2160deg;
 }

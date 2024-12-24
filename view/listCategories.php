@@ -10,7 +10,7 @@
 </head>
 <body>
     <p class="uk-label uk-label-warning">Il y a <?= $requete->rowCount()?> categories.</p>
-    
+
     <div class="cardContainer">
         <?php
             foreach($requete->fetchAll() as $category) { ?>
@@ -18,6 +18,14 @@
                 <p><?= $category["genre_name"]?></p>
             </div> 
         <?php } ?>   
+    </div>
+
+    <div class="formContainer">
+        <form class="formAddType" action="post" method="post" id="addtype">
+            <label for="addtype">Add your own Category !</label><br>
+            <input class="categoryInput" type="text" name="addType" id="addType" placeholder="Category Name"><br>
+            <input  class="submitAddType" type="submit" name="submit" value="Submit">
+        </form>
     </div>
 </body>
 </html>
