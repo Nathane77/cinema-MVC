@@ -35,7 +35,7 @@
     </thead>
     <tbody>
         <?php
-        foreach($actorFilmsDetails->fetchAll() as $filmDetails) { ?>
+        foreach($directorFilmsDetails->fetchAll() as $filmDetails) { ?>
             <tr>
                 <td><a href="index.php?action=filmDetails&id=<?= $filmDetails["id_film"]?>"><?= $filmDetails["film_title"]?></a></td>
                 <td><?= $filmDetails["film_duration"]." min"?></td>

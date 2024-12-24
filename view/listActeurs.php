@@ -15,16 +15,12 @@
         <?php 
         foreach($requete->fetchAll() as $actor) { ?>
         <tr>
-            <td><?= $actor["person_name"]?></td>
+            <td><a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"><?= $actor["person_name"]?></a></td>
             <td><?= $actor["person_lastName"]?></td>
-            <td><a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"> Voir plus.</a></td>
         </tr>
         <?php } ?>
     </tbody>
 </table>
-
-
-
 <?php
 
 $titre = "Liste des acteurs";

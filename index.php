@@ -1,6 +1,8 @@
 <?php 
 use Controller\CinemaController;
 use Controller\PersonController;
+use Controller\MainController;
+use Controller\CategoryController;
 
 spl_autoload_register(function($class_name) {
     include $class_name . '.php';
@@ -8,15 +10,20 @@ spl_autoload_register(function($class_name) {
 
 $ctrlCinema = new CinemaController();
 $ctrlPerson= new PersonController();
+$ctrlMain= new MainController();
+$ctrlCategory = new CategoryController();
 
 if(isset($_GET["action"])){
     switch($_GET["action"]){
+        case "mainMenu": $ctrlMain->mainMenu(); break;
         case "listFilms": $ctrlCinema->listFilms(); break;
-        case "listActeurs": $ctrlPerson->listActeurs(); break;
-        case "listDirectors": $ctrlPerson->listDirectors(); break;
         case "filmDetails": $ctrlCinema->filmDetails($_GET["id"]); break;
+        case "listActeurs": $ctrlPerson->listActeurs(); break;
         case "actorDetails": $ctrlPerson->actorDetails($_GET["id"]); break;
-        case "listCategories": $ctrlCinema->listCategories(); break;
-        case "actorDetails": $ctrlCinema->
+        case "listDirectors": $ctrlPerson->listDirectors(); break;
+        case "directorDetails": $ctrlPerson->directorDetails($_GET["id"]); break;
+        case "listCategories": $ctrlCategory->listCategories(); break;
+        case "categoryDetails": $ctrlCategory->categoryDetails($_GET["id"]); break;
+        case "addCategory": $ctrlCategory->addCategory($_GET["id"]); break;
     }
 }

@@ -39,7 +39,7 @@
         <?php 
         foreach($casting->fetchAll() as $actor) { ?>
         <tr>
-        <td><?= $actor["person_name"]?></td>
+            <td><a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"><?= $actor["person_name"]?></a></td>
             <td><?= $actor["person_lastName"]?></td>
             <td><?= $actor["person_gender"]?></td>
             <td><?= $actor["person_birthdate"]?></td>

@@ -1,33 +1,29 @@
-<?php ob_start(); 
-
+<?php ob_start();
 ?>
 
-<p class="uk-label uk-label-warning">Il y a <?= $requete->rowCount()?> categories.</p>
-
-<table>
-    <thead>
-        <tr>
-            <th>Nom de la categorie</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php 
-        foreach($requete->fetchAll() as $category) { ?>
-        <tr>
-            <td>
-                <a href="index.php?action=categoryDetails&id=<?= $category["id_genre"]?>"><?= $category["genre_name"]?>
-                <a>
-            </td>
-        </tr>
-        <?php } ?>
-    </tbody>
-</table>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="uk-label uk-label-warning">Il y a <?= $requete->rowCount()?> categories.</p>
+    
+    <div class="cardContainer">
+        <?php
+            foreach($requete->fetchAll() as $category) { ?>
+            <div class="card" onclick="window.location='index.php?action=categoryDetails&id=<?= $category['id_genre']?>'"> 
+                <p><?= $category["genre_name"]?></p>
+            </div> 
+        <?php } ?>   
+    </div>
+</body>
+</html>
 
 <?php
-
-$titre = "Liste des acteurs";
-$titre_secondaire = "Liste des acteurs";
+$titre = "Liste des categories";
+$titre_secondaire = "Liste des categories";
 $contenu = ob_get_clean();
 require "view/template.php";

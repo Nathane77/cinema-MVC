@@ -1,46 +1,26 @@
 <?php ob_start();
 ?>
-<table>
-    <thead>
-        <tr>
-            <th>Prenom</th>
-            <th>Nom</th>
-            <th>genre</th>
-            <th>Anniversaire</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php 
-        foreach($requete->fetchAll() as $actor) { ?>
-        <tr>
-            <td><?= $actor["person_name"]?></td>
-            <td><?= $actor["person_lastName"]?></td>
-            <td><?= $actor["person_gender"]?></td>
-            <td><?= $actor["person_birthdate"]?></td>
-        </tr>
-        <?php } ?>
-    </tbody>
-</table>
 
-<h2>Liste des films</h2>
+
+<h2>
+ <?php   
+foreach($requete->fetchAll() as $genreDetail) {?>
+        <?= $genreDetail["genre_name"]?>
+<?php } ?>
+</h2>
+
+
 
 <table>
-    <thead>
+    <thead>    
         <tr>
-            <th>Titre</th>
-            <th>Durée en Minute</th>
-            <th>Rating</th>
-            <th>Année de sortie</th>
         </tr>
     </thead>
     <tbody>
         <?php
-        foreach($actorFilmsDetails->fetchAll() as $filmDetails) { ?>
+        foreach($categoryDetails->fetchAll() as $genreDetail) { ?>
             <tr>
-                <td><?= $filmDetails["film_title"]?></td>
-                <td><?= $filmDetails["film_duration"]." min"?></td>
-                <td><?= $filmDetails["film_rating"]?></td>
-                <td><?= $filmDetails["film_date"]?></td>
+                <td><a href="index.php?action=filmDetails&id=<?= $genreDetail["id_film"]?>"><?= $genreDetail["film_title"]?></a></td>
             </tr>
             <?php } ?>
     </tbody>

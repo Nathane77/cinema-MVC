@@ -113,6 +113,7 @@ footer{
 ::placeholder{
     color: #b9b9b9;
 }
+
 table{
     th {
     padding-top: 12px;
@@ -124,4 +125,26 @@ table{
     td,th {
         padding: 6px;
     }
+}
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    background-color: grey;
+    width: 200px;
+    height: 275px;
+    margin: 1em;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+    transition: scale 0.2s;
+}
+
+.card:hover{
+    cursor: pointer;
+    scale: 1.2;
 }
