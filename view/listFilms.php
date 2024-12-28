@@ -4,24 +4,19 @@
 
 <p class="uk-label uk-label-warning">Il y a <?= $requete->rowCount()?> films.</p>
 
-<table>
-    <thead>
-        <tr>
-            <th>TITRE</th>
-            <th>ANNE SORTIE</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php 
-        foreach($requete->fetchAll() as $film) { ?>
-        <tr>
-            <td><a href="index.php?action=filmDetails&id=<?= $film["id_film"]?>"><?= $film["film_title"]?></a></td>
-            <td><?= $film["film_date"]?></td>            
-        </tr>
-        <?php } ?>
-    </tbody>
-</table>
-
+<div class="cardContainer">
+        <?php
+            foreach($requete->fetchAll() as $film) { ?>
+            <div class="card" onclick="window.location='index.php?action=filmDetails&id=<?$film['id_film']?>'"> 
+                <div class="cardText">
+                    <p><?= $film["film_title"]?></p>
+                    <p>-</p>
+                    <p><?= $film["film_date"]?></p>
+                </div>
+                <img class="cardPoster" src="public\img\posters\<?=$film['film_poster']?>" alt='poster of <?=$film['film_title']?>'>
+            </div> 
+        <?php } ?>   
+    </div>
 
 
 <?php

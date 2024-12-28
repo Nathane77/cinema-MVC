@@ -42,5 +42,15 @@ class CategoryController {
 
     }
 
-    
+    public function addCategory($newGenre) {
+
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->prepare("
+            INSERT INTO genre (genre_name) 
+            values
+            (:newGenre)
+        ");
+        
+        $requete->execute(["newGenre"=>$newGenre]);   
+    }
 }

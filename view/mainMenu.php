@@ -13,7 +13,6 @@
 </html>
 
 <?php
-$titre = "Liste des acteurs";
-$titre_secondaire = "Liste des acteurs";
+$titre = "PDO Cinema";
 $contenu = ob_get_clean();
 require "view/template.php";
