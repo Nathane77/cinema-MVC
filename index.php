@@ -24,6 +24,7 @@ if(isset($_GET["action"])){
         case "directorDetails": $ctrlPerson->directorDetails($_GET["id"]); break;
         case "listCategories": $ctrlCategory->listCategories(); break;
         case "categoryDetails": $ctrlCategory->categoryDetails($_GET["id"]); break;
-        case "addCategory": $ctrlCategory->addCategory($_GET["id"]); break;
+        
+        case "addCategory": $ctrlCategory->addCategory($_GET['addType']); break;
     }
 }

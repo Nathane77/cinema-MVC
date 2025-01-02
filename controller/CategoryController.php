@@ -42,7 +42,9 @@ class CategoryController {
 
     }
 
-    public function addCategory($newGenre) {
+
+    //????
+    public function addCategory($addType) {
 
         $pdo = Connect::seConnecter();
         $requete = $pdo->prepare("
@@ -51,6 +53,8 @@ class CategoryController {
             (:newGenre)
         ");
         
-        $requete->execute(["newGenre"=>$newGenre]);   
+        $requete->execute(["newGenre"=>$addType]);  
+        $_POST = '';
+        // header('index.php?action=listCategories');
     }
 }

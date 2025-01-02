@@ -210,9 +210,9 @@ table{
     color: #b9b9b9;
     border-radius: 7px;
     border: none;
-    transition: rotate 1s;
+    /* transition: rotate 1s; */
 }
 
-.submitAddType:focus{
+/* .submitAddType:focus{
     rotate: 2160deg;
-}
+} */
