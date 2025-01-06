@@ -42,19 +42,37 @@ class CategoryController {
 
     }
 
+    public function addCategoryForm(){
 
-    //????
-    public function addCategory($addType) {
-
-        $pdo = Connect::seConnecter();
-        $requete = $pdo->prepare("
-            INSERT INTO genre (genre_name) 
-            values
-            (:newGenre)
-        ");
         
-        $requete->execute(["newGenre"=>$addType]);  
-        $_POST = '';
-        // header('index.php?action=listCategories');
+        require "view/addCategoryForm.php";
+    }
+
+    public function addCategory() {
+
+        if(isset($_POST['submit'])){
+
+            $addCategory = filter_input(INPUT_POST, "addType", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+           
+
+            if($addCategory){
+                $pdo = Connect::seConnecter();
+                $requete = $pdo->prepare("
+                INSERT INTO genre (genre_name) 
+                values
+                (:newGenre)
+                ");
+                
+                $requete->execute(["newGenre"=>$addCategory]);  
+            }
+        }
+
+        else{
+            $addCategory = null;
+            echo "Something went wrong, try again.";
+        }
+
+        header("location: index.php?action=listCategories");
     }
 }

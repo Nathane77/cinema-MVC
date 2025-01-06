@@ -16,15 +16,21 @@ $ctrlCategory = new CategoryController();
 if(isset($_GET["action"])){
     switch($_GET["action"]){
         case "mainMenu": $ctrlMain->mainMenu(); break;
+
         case "listFilms": $ctrlCinema->listFilms(); break;
         case "filmDetails": $ctrlCinema->filmDetails($_GET["id"]); break;
+
         case "listActeurs": $ctrlPerson->listActeurs(); break;
         case "actorDetails": $ctrlPerson->actorDetails($_GET["id"]); break;
+
         case "listDirectors": $ctrlPerson->listDirectors(); break;
         case "directorDetails": $ctrlPerson->directorDetails($_GET["id"]); break;
+        
         case "listCategories": $ctrlCategory->listCategories(); break;
         case "categoryDetails": $ctrlCategory->categoryDetails($_GET["id"]); break;
         
-        case "addCategory": $ctrlCategory->addCategory($_GET['addType']); break;
+        case "addCategoryForm": $ctrlCategory->addCategoryForm(); break;
+
+        case "addCategory": $ctrlCategory->addCategory(); break;
     }
 }

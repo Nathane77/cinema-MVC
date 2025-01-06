@@ -17,6 +17,23 @@ body{
     background-attachment: fixed;
 }
 
+button{
+    text-decoration: none;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    color: white;
+    height: 35px;
+    width: 190px;
+    transition: scale 0.2s;
+
+}
+
+button:hover{
+    cursor: pointer;
+    scale: 1.2;
+}
+
 a{
     text-decoration: none;
     color: white;
@@ -66,7 +83,7 @@ h1, h2{
 
 footer{
     width: 100%;
-    height: 50px;
+    height: 55px;
     background-color: #2D2A3C;
     align-items: center;
     justify-content: space-around;
@@ -103,6 +120,7 @@ footer{
     border-radius: 10px;
     background-color: #1E1E1E;
     caret-color: white;
+    color: white;
 }
 
 .content{
@@ -189,7 +207,6 @@ table{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    width: 30%;
     height: 250px;
     margin-bottom: 3em;
     flex-direction: column;
