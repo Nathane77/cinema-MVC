@@ -4,26 +4,15 @@
 
 <p class="uk-label uk-label-warning">Il y a <?= $requete->rowCount()?> directeur.</p>
 
-<table>
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Nom de famille</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="directorContainer">
         <?php 
         foreach($requete->fetchAll() as $director) { ?>
-        <tr>
-            <td><a href="index.php?action=directorDetails&id=<?= $director["id_director"]?>"><?= $director["person_name"]?></a></td>
-            
-            <td><?= $director["person_lastName"]?></td>
-        </tr>
+            <div class="director">
+                    <img class="directorImg" src="public\img\posters\directorPosters\<?= $director["person_name"]?>.jpeg" alt="">
+                <a href="index.php?action=actorDetails&id=<?= $director["id_director"]?>"><?= $director["person_lastName"]?> <?= $director["person_name"]?></a>
+            </div>
         <?php } ?>
-    </tbody>
-</table>
-
-
+</div>
 
 <?php
 
