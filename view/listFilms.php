@@ -7,13 +7,13 @@
 <div class="cardContainer">
         <?php
             foreach($requete->fetchAll() as $film) { ?>
-            <div class="card" onclick="window.location='index.php?action=filmDetails&id=<?$film['id_film']?>'"> 
+            <div class="card" onclick="window.location='index.php?action=filmDetails&id=<?=$film['id_film']?>'"> 
                 <div class="cardText">
                     <p><?= $film["film_title"]?></p>
                     <p>-</p>
                     <p><?= $film["film_date"]?></p>
                 </div>
-                <img class="cardPoster" src="public\img\posters\filmPosters\<?=$film['film_poster']?>" alt='poster of <?=$film['film_title']?>'>
+                <img class="cardPoster" src="public\img\posters\filmPosters\<?=$film['film_poster']?>" alt='poster of <?=$film['film_title']?>' >
             </div> 
         <?php } ?>   
     </div>

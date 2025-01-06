@@ -26,27 +26,27 @@
     </tbody>
 </table>
 <h2>Casting</h2>
-<table>
-    <thead>
-        <tr>   
-            <th>Prenom</th>
-            <th>Nom</th>
-            <th>genre</th>
-            <th>Anniversaire</th>
-        </tr>
-    </thead>
-    <tbody>
+
+<div class="castingContainer">
+    <h3>Acteurs du film</h3>
         <?php 
         foreach($casting->fetchAll() as $actor) { ?>
-        <tr>
-            <td><a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"><?= $actor["person_name"]?></a></td>
-            <td><?= $actor["person_lastName"]?></td>
-            <td><?= $actor["person_gender"]?></td>
-            <td><?= $actor["person_birthdate"]?></td>
-        </tr>
+            <div class="actor">
+                    <img class="actorImg" src="public\img\posters\actorPosters\<?= $actor["person_name"]?>.jpeg" alt="">
+                <a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"><?= $actor["person_lastName"]?> <?= $actor["person_name"]?></a>
+            </div>
         <?php } ?>
-    </tbody>
-</table>
+        <h3>Directeur du film</h3>
+            <div>
+            <?php 
+            foreach($director->fetchAll() as $director) { ?>
+                <div class="director">
+                    <img class="directorImg" src="public\img\posters\directorPosters\<?= $director["person_name"]?>.jpeg" alt="">
+                <a href="index.php?action=directorDetails&id=<?= $director["id_director"]?>"><?= $director["person_lastName"]?> <?= $director["person_name"]?></a>
+            </div>
+            </div>
+        <?php } ?>
+</div>
 
 
 <?php

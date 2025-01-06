@@ -17,11 +17,12 @@ class CinemaController {
 
     public function filmDetails($id) {
         $pdo = Connect::seConnecter();
-        $requete = $pdo->query("
+        $requete = $pdo->prepare("
         SELECT *
         FROM film f
-        where f.id_film =".$id);
+        where f.id_film = :id");
 
+        $requete->execute(["id"=>$id]);
 
         $casting = $pdo->prepare("
         SELECT p.person_name, p.person_lastName, p.person_gender, p.person_birthdate, a.id_actor
@@ -33,6 +34,16 @@ class CinemaController {
         ");
 
         $casting->execute(["id"=>$id]);
+
+
+        $director = $pdo->prepare("
+          SELECT p.person_name, p.person_lastName, p.person_gender, p.person_birthdate, d.id_director
+        FROM person p
+        INNER JOIN director d ON d.id_person = p.id_person
+        INNER JOIN film f ON f.id_director = d.id_director
+        WHERE f.id_film =  :id");
+
+        $director->execute(["id"=>$id]);
 
         require "view/filmDetails.php";
     }
