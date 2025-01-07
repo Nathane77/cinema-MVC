@@ -13,7 +13,7 @@
                     <p>-</p>
                     <p><?= $film["film_date"]?></p>
                 </div>
-                <img class="cardPoster" src="public\img\posters\filmPosters\<?=$film['film_poster']?>" alt='poster of <?=$film['film_title']?>' >
+                <img class="cardPoster" src="public\img\posters\filmPosters\<?=$film['film_poster']?>" alt='poster of <?=$film['film_title']?>'>
             </div> 
         <?php } ?>   
     </div>

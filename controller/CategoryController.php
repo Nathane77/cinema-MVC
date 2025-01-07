@@ -9,10 +9,11 @@ class CategoryController {
         
         $pdo = Connect::seConnecter();
         $requete = $pdo->query("
-        SELECT g.genre_name, g.id_genre
+        SELECT g.genre_name, g.id_genre, f.film_poster, f.film_title
         FROM genre g
+        INNER JOIN film f ON f.film_genre = g.id_genre
         ");
-        
+
         require "view/listCategories.php";
 
     }
