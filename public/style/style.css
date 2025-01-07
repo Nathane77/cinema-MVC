@@ -249,6 +249,10 @@ table{
     .cardPoster{
         filter: brightness(50%);
     }
+    .cardText{
+        opacity: 100;
+        transition: opacity 0.2s;  
+    }
     
 }
 
@@ -265,6 +269,7 @@ table{
     transform: translate(-50%, -50%);
     border-radius: 10px;
     z-index: 999;
+    opacity: 0;
   }
 
 .cardPoster{
