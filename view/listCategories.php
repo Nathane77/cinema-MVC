@@ -21,7 +21,7 @@
             </div> 
         <?php } ?>   
     </div>
-        <button onclick="window.location='index.php?action=addCategoryForm'">Ajouter votre propre categorie!</button>   
+        <button class="addFormButton" onclick="window.location='index.php?action=addCategoryForm'">Ajouter votre propre categorie!</button>   
 </body>
 </html>
 

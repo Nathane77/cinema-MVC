@@ -32,8 +32,8 @@
         <?php 
         foreach($casting->fetchAll() as $actor) { ?>
             <div class="actor">
-                    <img class="actorImg" src="public\img\posters\actorPosters\<?= $actor["person_name"]?>.jpeg" alt="">
-                <a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"><?= $actor["person_lastName"]?> <?= $actor["person_name"]?></a>
+                    <img class="actorImg" src="public\img\posters\actorPosters\<?= $actor["person_lastName"]?>.jpeg" alt="">
+                <a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"><?= $actor["person_name"]?> <?= $actor["person_lastName"]?></a>
             </div>
         <?php } ?>
         <h3>Directeur du film</h3>
@@ -41,8 +41,8 @@
             <?php 
             foreach($director->fetchAll() as $director) { ?>
                 <div class="director">
-                    <img class="directorImg" src="public\img\posters\directorPosters\<?= $director["person_name"]?>.jpeg" alt="">
-                <a href="index.php?action=directorDetails&id=<?= $director["id_director"]?>"><?= $director["person_lastName"]?> <?= $director["person_name"]?></a>
+                    <img class="directorImg" src="public\img\posters\directorPosters\<?= $director["person_lastName"]?>.jpeg" alt="">
+                <a href="index.php?action=directorDetails&id=<?= $director["id_director"]?>"><?= $director["person_name"]?> <?= $director["person_lastName"]?></a>
             </div>
             </div>
         <?php } ?>

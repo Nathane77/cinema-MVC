@@ -25,7 +25,7 @@ public function listActeurs() {
         $requete->execute(["id"=>$id]);
 
         $actorFilmsDetails=$pdo->prepare("
-        SELECT f.film_title, f.film_duration, f.film_rating, f.film_date, f.id_film
+        SELECT f.film_title, f.film_duration, f.film_rating, f.film_date, f.film_poster, f.id_film
         FROM actor a
         INNER JOIN person p ON p.id_person = a.id_person
         INNER JOIN casting c ON c.id_actor = a.id_actor

@@ -295,14 +295,14 @@ table{
     }
 }
 
+.addFormButton{
+    margin: 0.5em;
+}
+
 .submitAddType{
     background-color: #2D2A3C;
     color: #b9b9b9;
     border-radius: 7px;
     border: none;
-    /* transition: rotate 1s; */
 }
 
-/* .submitAddType:focus{
-    rotate: 2160deg;
-} */

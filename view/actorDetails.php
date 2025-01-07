@@ -1,52 +1,29 @@
 <?php ob_start();
 ?>
-<table>
-    <thead>
-        <tr>
-            <th>Prenom</th>
-            <th>Nom</th>
-            <th>genre</th>
-            <th>Anniversaire</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php 
+      <?php 
         foreach($requete->fetchAll() as $actor) { ?>
-        <tr>
-            <td><?= $actor["person_name"]?></td>
-            <td><?= $actor["person_lastName"]?></td>
-            <td><?= $actor["person_gender"]?></td>
-            <td><?= $actor["person_birthdate"]?></td>
-        </tr>
+            <div class="actor">
+                    <img class="actorImg" src="public\img\posters\actorPosters\<?= $actor["person_lastName"]?>.jpeg" alt="">
+                <p><?= $actor["person_name"]?> <?= $actor["person_lastName"]?></p>
+            </div>
         <?php } ?>
-    </tbody>
-</table>
 
 <h2>Liste des films</h2>
 
-<table>
-    <thead>
-        <tr>
-            <th>Titre</th>
-            <th>Durée en Minute</th>
-            <th>Rating</th>
-            <th>Année de sortie</th>
-        </tr>
-    </thead>
-    <tbody>
+
+<div class="cardContainer">
         <?php
-        foreach($actorFilmsDetails->fetchAll() as $filmDetails) { ?>
-            <tr>
-                <td><a href="index.php?action=filmDetails&id=<?= $filmDetails["id_film"]?>"><?= $filmDetails["film_title"]?></a></td>
-                <td><?= $filmDetails["film_duration"]." min"?></td>
-                <td><?= $filmDetails["film_rating"]?></td>
-                <td><?= $filmDetails["film_date"]?></td>
-            </tr>
-            <?php } ?>
-    </tbody>
-</table>
-
-
+                foreach($actorFilmsDetails->fetchAll() as $filmDetails) { ?>
+            <div class="card" onclick="window.location='index.php?action=filmDetails&id=<?=$filmDetails['id_film']?>'"> 
+                <div class="cardText">
+                    <p><?= $filmDetails["film_title"]?></p>
+                    <p>-</p>
+                    <p><?= $filmDetails["film_date"]?></p>
+                </div>
+                <img class="cardPoster" src="public\img\posters\filmPosters\<?=$filmDetails['film_poster']?>" alt='poster of <?=$filmDetails['film_title']?>' >
+            </div> 
+        <?php } ?>   
+    </div>
 
 <?php
 

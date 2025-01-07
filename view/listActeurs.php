@@ -8,8 +8,8 @@
         <?php 
         foreach($requete->fetchAll() as $actor) { ?>
             <div class="actor">
-                    <img class="actorImg" src="public\img\posters\actorPosters\<?= $actor["person_name"]?>.jpeg" alt="">
-                <a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"><?= $actor["person_lastName"]?> <?= $actor["person_name"]?></a>
+                    <img class="actorImg" src="public\img\posters\actorPosters\<?= $actor["person_lastName"]?>.jpeg" alt="">
+                <a href="index.php?action=actorDetails&id=<?= $actor["id_actor"]?>"><?= $actor["person_name"]?> <?= $actor["person_lastName"]?></a>
             </div>
         <?php } ?>
 </div>
