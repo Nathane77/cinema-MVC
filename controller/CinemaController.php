@@ -58,4 +58,36 @@ class CinemaController {
         require "view/listActeurs.php";
     }
 
+    public function addFilmForm(){
+
+        require "view/form/AddFilmForm.php";
+
+    }
+
+
+    // public function addFilm() {
+    //     if(isset($_POST['submit'])){
+
+    //         $addFilm = filter_input(INPUT_POST, "addType", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    //         if($addFilm){
+    //             $pdo = Connect::seConnecter();
+    //             $requete = $pdo->prepare("
+    //             INSERT INTO genre (genre_name) 
+    //             values
+    //             (:newGenre)
+    //             ");
+                
+    //             $requete->execute(["newGenre"=>$addFilm]);  
+    //         }
+    //     }
+
+    //     else{
+    //         $addFilm = null;
+    //         echo "Something went wrong, try again.";
+    //     }
+
+    //     header("location: index.php?action=listFilm");
+    // } 
+
 }

@@ -1,0 +1,23 @@
+<?php ob_start();
+?>
+
+<div class="formContainer">
+        <form class="formAddType" action="index.php?action=addCasting" method="post" id="addtype">
+
+            <label for="addtype">Add your own Casting !</label><br>
+
+            <input class="categoryInput" type="text" name="addName" id="addName" placeholder="Person's name"><br>
+            <input class="categoryInput" type="text" name="addLastName" id="addLastName" placeholder="Person's lastname"><br>
+            <input class="categoryInput" type="text" name="addGender" id="addGender" placeholder="Person's gender"><br>
+            <input class="categoryInput" type="text" name="addBirthdate" id="addBirthdate" placeholder="Person's birthdate"><br>
+            <input  class="submitAddType" type="submit" name="submit" value="Submit">
+
+        </form>
+
+    </div>
+
+    <?php
+$titre = "Liste des categories";
+$titre_secondaire = "Liste des categories";
+$contenu = ob_get_clean();
+require "view/template.php";

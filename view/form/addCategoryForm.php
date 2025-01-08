@@ -1,12 +1,12 @@
 <?php ob_start();
 
-if(isset($_POST['submit'])){
-    $newGenre_name = filter_input(INPUT_POST, "addType", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    if(!$newGenre_name){
-        $newGenre_name = null;
-        echo "Something went wrong, try again.";
-    }
-}
+// if(isset($_POST['submit'])){
+//     $newGenre_name = filter_input(INPUT_POST, "addType", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+//     if(!$newGenre_name){
+//         $newGenre_name = null;
+//         echo "Something went wrong, try again.";
+//     }
+// }
 
 ?>
 

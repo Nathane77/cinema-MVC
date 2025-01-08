@@ -30,7 +30,10 @@ if(isset($_GET["action"])){
         case "categoryDetails": $ctrlCategory->categoryDetails($_GET["id"]); break;
         
         case "addCategoryForm": $ctrlCategory->addCategoryForm(); break;
+        case "addFilmForm": $ctrlCinema->addFilmForm(); break;
+        case "addCastingForm": $ctrlPerson->addCastingForm(); break;
 
         case "addCategory": $ctrlCategory->addCategory(); break;
+        case "addCasting": $ctrlPerson->addCasting(); break;
     }
 }

@@ -71,5 +71,42 @@ public function listActeurs() {
             require "view/directorDetails.php";
         
     }
-  
+
+    public function addCastingForm() {
+
+        require "view/form/addCastingForm.php";
+    }
+
+    public function addCasting() {
+    
+          if(isset($_POST['submit'])){
+
+            $addName = filter_input(INPUT_POST, "addName", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $addLastName = filter_input(INPUT_POST, "addLastName", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $addGender = filter_input(INPUT_POST, "addGender", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $addBirthdate = filter_input(INPUT_POST, "addBirthdate", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($addName && $addLastName && $addGender && $addBirthdate){
+                $pdo = Connect::seConnecter();
+                $requete = $pdo->prepare("
+             INSERT INTO person (person_name, person_lastName, person_gender, person_poster, person_birthdate)
+            VALUES (:name, :lastName, :gender, :poster, :birthdate)
+                ");
+                
+                $requete->execute(
+                        ["name"=>$addName,
+                        "lastName"=>$addLastName,
+                        "poster"=>$addLastName.".jpg",
+                        "gender"=>$addGender,
+                        "birthdate"=>$addBirthdate]);  
+            }
+        }
+
+        else{
+            $addCategory = null;
+            echo "Something went wrong, try again.";
+        }
+
+        // header("location: index.php?action=listFilms");
+    }
 }

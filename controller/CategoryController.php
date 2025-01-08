@@ -46,7 +46,7 @@ class CategoryController {
     public function addCategoryForm(){
 
         
-        require "view/addCategoryForm.php";
+        require "view/form/addCategoryForm.php";
     }
 
     public function addCategory() {

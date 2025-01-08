@@ -15,7 +15,8 @@
                 </div>
                 <img class="cardPoster" src="public\img\posters\filmPosters\<?=$film['film_poster']?>" alt='poster of <?=$film['film_title']?>'>
             </div> 
-        <?php } ?>   
+        <?php } ?> 
+    <button class="addFormButton" onclick="window.location='index.php?action=addFilmForm'">Ajouter votre propre film!</button>
     </div>
 
 
