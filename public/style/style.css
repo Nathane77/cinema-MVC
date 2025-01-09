@@ -362,3 +362,30 @@ table{
     border: none;
 }
 
+.RadioInputContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    margin: auto;
+}
+
+input[type="radio"] {
+    appearance: none;
+
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  
+    border: 2px solid #b9b9b9;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+}
+
+input:checked{
+    background-color: #1E1E1E;
+}
+
+label {
+    margin: 0;
+}

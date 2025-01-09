@@ -85,28 +85,63 @@ public function listActeurs() {
             $addLastName = filter_input(INPUT_POST, "addLastName", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $addGender = filter_input(INPUT_POST, "addGender", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $addBirthdate = filter_input(INPUT_POST, "addBirthdate", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $castingActor = filter_input(INPUT_POST, "castingActor");
+            $castingDirector = filter_input(INPUT_POST, "castingDirector");
 
+
+          
             if($addName && $addLastName && $addGender && $addBirthdate){
-                $pdo = Connect::seConnecter();
-                $requete = $pdo->prepare("
-             INSERT INTO person (person_name, person_lastName, person_gender, person_poster, person_birthdate)
-            VALUES (:name, :lastName, :gender, :poster, :birthdate)
-                ");
-                
-                $requete->execute(
+                var_dump($_POST);
+                die;
+                if($castingActor == "on"){
+                    $pdo = Connect::seConnecter();
+                    $requete = $pdo->prepare("
+
+                    INSERT INTO person (person_name, person_lastName, person_gender, person_poster, person_birthdate)
+                    VALUES (:name, :lastName, :gender, :poster, :birthdate)
+
+                    SET @new_person_id = LAST_INSERT_ID();
+
+                    INSERT INTO actor a ('id_person')
+                    
+
+                    ");
+
+                    $requete->execute(
                         ["name"=>$addName,
                         "lastName"=>$addLastName,
                         "poster"=>$addLastName.".jpg",
                         "gender"=>$addGender,
-                        "birthdate"=>$addBirthdate]);  
+                        "birthdate"=>$addBirthdate]);
+                }
+               
+                elseif($castingDirector == "on"){
+                    $pdo = Connect::seConnecter();
+                    $requete = $pdo->prepare("
+
+                    INSERT INTO person (person_name, person_lastName, person_gender, person_poster, person_birthdate)
+                    VALUES (:name, :lastName, :gender, :poster, :birthdate)
+
+                    SET @new_person_id = LAST_INSERT_ID();
+
+                    INSERT INTO director  ('id_person')
+                    
+                    ");
+
+                    $requete->execute(
+                        ["name"=>$addName,
+                        "lastName"=>$addLastName,
+                        "poster"=>$addLastName.".jpg",
+                        "gender"=>$addGender,
+                        "birthdate"=>$addBirthdate]);
+                }
+                else{
+                    header('location: index.php');
+                    die;
+                }
             }
+        header("location: index.php?action=listFilms");
+        die;
         }
-
-        else{
-            $addCategory = null;
-            echo "Something went wrong, try again.";
-        }
-
-        // header("location: index.php?action=listFilms");
     }
 }
