@@ -15,6 +15,7 @@ $ctrlCategory = new CategoryController();
 
 if(isset($_GET["action"])){
     switch($_GET["action"]){
+        // case "": $ctrlMain->mainMenu();
         case "mainMenu": $ctrlMain->mainMenu(); break;
 
         case "listFilms": $ctrlCinema->listFilms(); break;
@@ -36,4 +37,7 @@ if(isset($_GET["action"])){
         case "addCategory": $ctrlCategory->addCategory(); break;
         case "addCasting": $ctrlPerson->addCasting(); break;
     }
+}else{
+   $ctrlMain->redirect();
 }
+
