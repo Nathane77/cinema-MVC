@@ -370,7 +370,7 @@ table{
     margin: auto;
 }
 
-input[type="radio"] {
+input[type="checkbox"] {
     appearance: none;
 
     border-radius: 50%;
@@ -380,6 +380,11 @@ input[type="radio"] {
     border: 2px solid #b9b9b9;
     transition: 0.2s all linear;
     margin-right: 5px;
+}
+
+input[type="checkbox"]:hover{
+    border-color: #541c74;
+    cursor: pointer;
 }
 
 input:checked{

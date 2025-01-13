@@ -3,7 +3,8 @@
 
 
 <h2>
- <?php   
+ <?php
+ //gets the name of the category
 foreach($requete->fetchAll() as $genreDetail) {?>
         <?= $genreDetail["genre_name"]?>
 <?php } ?>
@@ -18,6 +19,7 @@ foreach($requete->fetchAll() as $genreDetail) {?>
     </thead>
     <tbody>
         <?php
+        //gets each one of the film of the specific category
         foreach($categoryDetails->fetchAll() as $genreDetail) { ?>
             <tr>
                 <td><a href="index.php?action=filmDetails&id=<?= $genreDetail["id_film"]?>"><?= $genreDetail["film_title"]?></a></td>

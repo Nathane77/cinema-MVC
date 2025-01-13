@@ -27,5 +27,6 @@
         </main>
         <footer>
         </footer>
+        <script src="public\js\checkboxes.js"></script>
     </body>
 </html>

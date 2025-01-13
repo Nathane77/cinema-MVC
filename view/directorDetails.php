@@ -1,6 +1,7 @@
 <?php ob_start();
 ?>
-      <?php 
+      <?php
+        //gets the name of the director and their poster.
         foreach($requete->fetchAll() as $director) { ?>
             <div class="director">
                     <img class="directorImg" src="public\img\posters\directorPosters\<?= $director["person_lastName"]?>.jpeg" alt="">
@@ -13,6 +14,7 @@
 
 <div class="cardContainer">
         <?php
+        //gets each on of the films the director is listed on.
         foreach($directorFilmsDetails->fetchAll() as $filmDetails) { ?>
             <div class="card" onclick="window.location='index.php?action=filmDetails&id=<?=$filmDetails['id_film']?>'"> 
                 <div class="cardText">

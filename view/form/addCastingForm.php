@@ -1,21 +1,25 @@
 <?php ob_start();
+session_start();
 ?>
 
+<!-- Form for adding a person-->
 <div class="formContainer">
         <form class="formAddType" action="index.php?action=addCasting" method="post" id="addtype">
 
             <label for="addtype">Add your own Casting !</label><br>
 
-            <input class="categoryInput" type="text" name="addName" id="addName" placeholder="Person's name"><br>
+            <!-- autocomplete="off" -->
+            <input class="categoryInput" type="text" name="addName" id="addName" placeholder="Person's name" ><br>
             <input class="categoryInput" type="text" name="addLastName" id="addLastName" placeholder="Person's lastname"><br>
             <input class="categoryInput" type="text" name="addGender" id="addGender" placeholder="Person's gender"><br>
             <input class="categoryInput" type="text" name="addBirthdate" id="addBirthdate" placeholder="Person's birthdate"><br>
 
+            <!-- radio input to choose between making the person an actor or a director-->
             <div class="RadioInputContainer">
                 <label for="actor">Actor</label>
-                <input class="radioInput" type="radio" name="castingActor" id="actor" >
+                <input class="checkboxInput" type="checkbox" name="castingActor" value="actor" click='RequireCheckbox("checkboxInput")'>
                 <label for="director">Director</label>
-                <input type="radio" name="castingDirector" id="director">
+                <input class="checkboxInput" type="checkbox" name="castingDirector" value="director" onclick='RequireCheckbox("checkboxInput")'>
             </div>
             <input  class="submitAddType" type="submit" name="submit" value="Submit">
 

@@ -1,13 +1,16 @@
 <?php
  
 namespace Model;
-// la classe est abstraite car on n'instanciera jamais la classe Connect -> on a seulement besoin d'accéder à la méthode seConnecter()
+//The class is abstract because we never call the classe Connect-> only the method seConnecter()
 abstract class Connect {
+
+    //give the parameters to connect to the DB
     const HOST = "localhost";
     const DB = "allocinenassim";
     const USER = "root";
     const PASS ="";
  
+    //creates the connect function with PDO
     public static function seConnecter() {
         try {
             $pdo = new \PDO(
